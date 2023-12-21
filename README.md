@@ -18,15 +18,57 @@ npm start
 
 TODO: Add the error here followed by the line of code you fixed.
 
+
+
+
 ### Bug 0
 
 `ReferenceError: app is not defined`
 
 Fixed `quote.router.js` line 28: switch `app` to `router`. _This is the solution to the first bug._
 
+
+
 ### Bug 1
 
+-- Router.use() requires a middleware function but got a Object
+
+added `module.exports = router`
 ...
+### Bug 2
+
+-- server 404 error not found  GET http://localhost:5007/quotes%7D 404 (Not Found)
+
+deleted qoutes from router.get on the qoute.router.js
+
+### Bug 3
+
+-- GET http://localhost:5007/quotes%7D 404 (Not Found)
+
+deleted curly on url code in client.js file 
+
+### Bug 4
+
+--TypeError: quotesFromServer is not iterable
+    at client.js:18:26
+
+ the qoutes were not an array but an object, chaged the object of qouteLIst into an array   
+
+ ### bug 5 
+
+ 404 vad request on post qoutesList is not defined 
+
+ removed s from qpoutesList in the router.js push element
+
+ ### bug 6
+
+ ReferenceError: getQuote is not defined
+
+ added s on getQoute() on like 55 of client.js 
+
+ ### bug 7
+
+ 
 
 ## Extra Practice (Optional)
 

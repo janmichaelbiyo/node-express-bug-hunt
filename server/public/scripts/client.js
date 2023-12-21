@@ -4,17 +4,20 @@ function getQuotes() {
     // Axios GET request (http request for information from the server)
     axios({
         method: 'GET',
-        url: '/quotes}'
+        url: '/quotes'
     }).then((response) => {
         // Code that will run on successful response
         // from the server.
         console.log(response);
+        console.log(response.data);
         // quotesFromServer will be an Array of quotes
         let quotesFromServer = response.data;
+        
         let contentDiv = document.querySelector('#content');
         contentDiv.innerHTML = '';
-        let i = 0;
+       let i = 0;
         // ??? Loop over array of quotes and append to the content div
+        
         for(let quote of quotesFromServer) {
             contentDiv.innerHTML += `
                 <p>
@@ -49,7 +52,7 @@ function submitForm(event) {
         data: quoteForServer
     }).then((response) => {
         console.log(response);
-        getQuote();
+        getQuotes();
     }).catch((error) => {
         console.log(error);
         alert('Something went wrong.');
